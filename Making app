@@ -1,0 +1,27 @@
+using UnityEngine;
+
+public class CharacterCombat : MonoBehaviour
+{
+    public int health = 100;
+    public int attackPower = 25;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))  // Example attack input
+        {
+            AttackEnemy();
+        }
+    }
+
+    void AttackEnemy()
+    {
+        Debug.Log("Attacking enemy with " + attackPower + " power!");
+        // Logic for attacking an enemy (e.g., reducing enemy health) goes here
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        Debug.Log("Character took " + damage + " damage. Health is now: " + health);
+    }
+}
